@@ -62,6 +62,9 @@ namespace MoralesJeanLuc_ExamenProgreso.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            _context.Add(celular);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
             return View(celular);
         }
 
