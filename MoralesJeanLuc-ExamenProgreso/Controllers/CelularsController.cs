@@ -64,7 +64,7 @@ namespace MoralesJeanLuc_ExamenProgreso.Controllers
             }
             _context.Add(celular);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            ViewData["IdMoralesJeanLuc"] = new SelectList(_context.MoralesJeanLuc, "Id", "Id", celular.IdMoralesJeanLuc);
             return View(celular);
         }
 
